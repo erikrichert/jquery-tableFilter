@@ -8,6 +8,8 @@ jQuery 1.11 or higher
 
 ##Installation
 
+##Basic Usage
+
 ##Configuration
 
 ##API
