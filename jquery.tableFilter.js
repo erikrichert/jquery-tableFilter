@@ -1,15 +1,16 @@
 (function($){
-	$.fn.tableFilter = function(options) {
-		
-		var settings = $.extend({
-			tableID: '#filter-table',
-			filterID: '#filter',
-			filterCell: '.filter-cell',
-			autofocus: false,
-			caseSensitive: true,
-			noresults: 'no results found',
-			columns: null
-		}, options);
+    "use strict";
+    $.fn.tableFilter = function(options) {
+	
+    var settings = $.extend({
+		tableID: '#filter-table',
+		filterID: '#filter',
+		filterCell: '.filter-cell',
+		autofocus: false,
+		caseSensitive: true,
+		noresults: 'no results found',
+		columns: null
+	}, options);
 		
 		//auto focus on filter element if autofocs set to true
 		if(settings.autofocus) {
@@ -39,28 +40,25 @@
 				if($(this).is(':icontains(' + filterString + ')')) {
 					//check hidden rows for backspace operation
 					if($(this).is(':hidden')) {
-						$(this).parent().removeClass('filter-hidden').show()
+						$(this).parent().removeClass('filter-hidden').show();
 					}
 				} else {
 					$(this).parent().addClass('filter-hidden').hide();
 				}
 				//check if .each() iterations complete
-				if(rowCount == (i + 1)) {
+				if(rowCount === (i + 1)) {
 					//find rows with 'hidden' class and compare to row count if equal then display 'no results found' message
 					var hidden = $(settings.tableID).find('.filter-hidden').length;
-					if (hidden == rowCount) {
-						if ($('#noResults').is(':visible')){ //do not display multiple "no results" messages
-							return;
-						} else {
-							var newRow = $('<tr id="noResults"><td colspan="' + settings.columns +'"><em>' + settings.noresults + '</em></td></tr>').hide(); //row can be styled with CSS
-							$(settings.tableID).append(newRow);
-							newRow.show();
+					if (hidden === rowCount) {
+						if ($('#noResults').is(':visible')) {
+							return; //do not display multiple "no results" messages
 						}
-					} else if ($('#noResults').is(':visible')){
+						var newRow = $('<tr id="noResults"><td colspan="' + settings.columns +'"><em>' + settings.noresults + '</em></td></tr>').hide(); //row can be styled with CSS
+						$(settings.tableID).append(newRow);
+						newRow.show();
+					} else if ($('#noResults').is(':visible')) { 
 						$('#noResults').remove();
-					} else {
-						return;
-					}
+					} 
 				}
 			}); 
 		});
