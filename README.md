@@ -8,8 +8,14 @@ jQuery 1.11 or higher
 
 ##Installation
 
-##Basic Usage
-
 ##Configuration
+
+##Usage
+
+###jQuery
+
+basic instantiation:
+
+    $('#myContainer').tableFilter();
 
 ##API
