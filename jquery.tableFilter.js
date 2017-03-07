@@ -7,22 +7,26 @@
 			tableID: '#filter-table',
 			filterID: '#filter',
 			filterCell: '.filter-cell',
-			autofocus: false,
+			autoFocus: false,
 			caseSensitive: false,
-			noresults: 'no results found',
+			noResults: 'no results found',
 			columns: null
 		}, options);
 		
 		//auto focus on filter element if autofocs set to true
-		if(settings.autofocus) {
+		if(settings.autoFocus) {
 			$(settings.filterID).focus();
 		}
 		
+		//get table rows
 		var rowCount = $(settings.filterCell).parent().length;
+		
+		//get tablecolumns by counting td's in forst row unless passed as option
 		if(settings.columns === null) {
 			settings.columns = $(settings.tableID + ' > tbody > tr:first >td').length;
 		}
 		
+		//use case-sensitive matching unless changed by settings (default)
 		var contains = ':contains';
 		
 		if(!settings.caseSensitive) {
@@ -35,6 +39,7 @@
 			contains = ':icontains';
 		}
 		
+		//bind eventListener to filter element
 		return this.find(settings.filterID).on("change paste keyup", function() {
 			//get value of input
 			var filterString = $(this).val();
@@ -57,7 +62,7 @@
 						if ($('#noResults').is(':visible')) {
 							return; //do not display multiple "no results" messages
 						}
-						var newRow = $('<tr id="noResults"><td colspan="' + settings.columns +'"><em>' + settings.noresults + '</em></td></tr>').hide(); //row can be styled with CSS
+						var newRow = $('<tr id="noResults"><td colspan="' + settings.columns +'"><em>' + settings.noResults + '</em></td></tr>').hide(); //row can be styled with CSS
 						$(settings.tableID).append(newRow);
 						newRow.show();
 					} else if ($('#noResults').is(':visible')) { 
