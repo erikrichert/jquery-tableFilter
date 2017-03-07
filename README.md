@@ -29,3 +29,12 @@ Options can also be passed as an object (see API):
 
 ##API
 ***
+
+Option        | Default Value   | Description
+------------- | --------------- | -------------
+Content Cell  | Content Cell    | Content Cell
+Content Cell  | Content Cell    | Content Cell
+Content Cell  | Content Cell    | Content Cell
+Content Cell  | Content Cell    | Content Cell
+Content Cell  | Content Cell    | Content Cell
+Content Cell  | Content Cell    | Content Cell
