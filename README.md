@@ -30,11 +30,12 @@ Options can also be passed as an object (see API):
 ##API
 ***
 
-Option        | Default Value   | Description
-------------- | --------------- | -------------
-Content Cell  | Content Cell    | Content Cell
-Content Cell  | Content Cell    | Content Cell
-Content Cell  | Content Cell    | Content Cell
-Content Cell  | Content Cell    | Content Cell
-Content Cell  | Content Cell    | Content Cell
-Content Cell  | Content Cell    | Content Cell
+Option        | Default Value      | Description
+------------- | ------------------ | -------------
+tableID       | '#filter-table'    | Content Cell
+filterID      | '#filter'          | Content Cell
+filterCell    | '.filter-cell'     | Content Cell
+autoFocus     | false              | Content Cell
+caseSensitive | false              | Content Cell
+noResults     | 'no results found' | Content Cell
+columns       | null               | Content Cell
