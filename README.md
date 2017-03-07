@@ -19,5 +19,13 @@ basic usage:
 
     $('#myContainer').tableFilter();
 
+Options can also be passed as an object (see API):
+
+    $('#myContainer').tableFilter({
+		tableID: '#myTable', 
+		filterID: 'myFilter', 
+		casesensitive: true
+	});
+
 ##API
 ***
