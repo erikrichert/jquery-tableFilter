@@ -55,9 +55,9 @@ Options can also be passed as an object (see API):
 
 Option        | Default Value      | Description
 ------------- | ------------------ | -------------
-tableID       | '#filter-table'    | This is the ID of the table to be filtered
-filterID      | '#filter'          | This is the ID of the input that will accept the filter text
-filterCell    | '.filter-cell'     | This is the <td> (column) that will contain the text to be filtered
+tableID       | '#filter-table'    | This is the ID of the table to be filtered. Can be customized if you have a different ID.
+filterID      | '#filter'          | This is the ID of the input that will accept the filter text. Can be customized if you have a different ID.
+filterCell    | '.filter-cell'     | This is the <td> (column) that will contain the text to be filtered. Can be customized if you have a different ID.
 autoFocus     | false              | if set to *true* the page will autofocus on the filterID on load
 caseSensitive | false              | if set to *true* the filtering will be case sensitive
 noResults     | 'no results found' | This is the message displayed when filtering returns no results (string)
