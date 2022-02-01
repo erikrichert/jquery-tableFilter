@@ -44,7 +44,7 @@
 			//get value of input
 			var filterString = $(this).val();
 		
-			//for each student name compare versus filter input
+			//for each cell compare versus filter input
 			$(settings.filterCell).each(function(i){ //pass i as iterator
 				if($(this).is(contains + '(' + filterString + ')')) {
 					//check hidden rows for backspace operation
