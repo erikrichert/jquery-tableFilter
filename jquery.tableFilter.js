@@ -40,7 +40,7 @@
 		}
 		
 		//bind eventListener to filter element
-		return this.find(settings.filterID).on("change paste keyup", function() {
+		return this.find(settings.filterID).on("input", function() {
 			//get value of input
 			var filterString = $(this).val();
 		
